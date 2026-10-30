@@ -1,0 +1,30 @@
+// Verilated -*- C++ -*-
+// DESCRIPTION: Verilator output: Design implementation internals
+// See Vjkfftb.h for the primary calling header
+
+#include "Vjkfftb__pch.h"
+
+void Vjkfftb___024root___ctor_var_reset(Vjkfftb___024root* vlSelf);
+
+void Vjkfftb___024root__ctor(Vjkfftb___024root* vlSelf, Vjkfftb__Syms* symsp, const char* namep) {
+    vlSelf->vlSymsp = symsp;
+    vlSelf->vlNamep = strdup(namep);
+    // Construct members
+    VL_INPLACE_CONSTRUCT(vlSelf->__Vnontrivs.__VdlySched, *vlSelf->vlSymsp->_vm_contextp__);
+    // Reset structure values
+    Vjkfftb___024root___ctor_var_reset(vlSelf);
+}
+
+Vjkfftb___024root::Vjkfftb___024root(Vjkfftb__Syms* symsp, const char* namep) {
+    Vjkfftb___024root__ctor(this, symsp, namep);
+}
+
+void Vjkfftb___024root__dtor(Vjkfftb___024root* vlSelf) {
+    // Destroy members
+    VL_INPLACE_DESTRUCT(vlSelf->__Vnontrivs.__VdlySched);
+    VL_DO_DANGLING(std::free(const_cast<char*>(vlSelf->vlNamep)), vlSelf->vlNamep);
+}
+
+Vjkfftb___024root::~Vjkfftb___024root() {
+    Vjkfftb___024root__dtor(this);
+}
