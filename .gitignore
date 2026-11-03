@@ -1,2 +1,6 @@
 **/obj_dir/
+<<<<<<< HEAD
 *.vvp
+=======
+**/*.vvp
+>>>>>>> ad07def (complete lab 08)
