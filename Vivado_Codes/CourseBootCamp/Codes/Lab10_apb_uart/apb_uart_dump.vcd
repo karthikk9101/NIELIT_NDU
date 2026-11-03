@@ -1,0 +1,296 @@
+$date
+	Tue Nov  3 15:18:19 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module apb_uart_tb $end
+$var wire 1 ! PREADY $end
+$var wire 32 " PRDATA [31:0] $end
+$var reg 32 # PADDR [31:0] $end
+$var reg 1 $ PENABLE $end
+$var reg 1 % PSEL $end
+$var reg 32 & PWDATA [31:0] $end
+$var reg 1 ' PWRITE $end
+$var reg 1 ( clk $end
+$var reg 1 ) rst_n $end
+$scope module dut $end
+$var wire 32 * PADDR [31:0] $end
+$var wire 1 $ PENABLE $end
+$var wire 1 % PSEL $end
+$var wire 32 + PWDATA [31:0] $end
+$var wire 1 ' PWRITE $end
+$var wire 1 ( clk $end
+$var wire 1 ) rst_n $end
+$var wire 1 ! PREADY $end
+$var wire 32 , PRDATA [31:0] $end
+$scope module dut $end
+$var wire 32 - PADDR [31:0] $end
+$var wire 1 $ PENABLE $end
+$var wire 1 % PSEL $end
+$var wire 32 . PWDATA [31:0] $end
+$var wire 1 ' PWRITE $end
+$var wire 1 ( clk $end
+$var wire 1 ) rst_n $end
+$var wire 1 / tx_busy $end
+$var wire 1 0 rx_ready $end
+$var wire 8 1 rx_data [7:0] $end
+$var reg 32 2 PRDATA [31:0] $end
+$var reg 1 ! PREADY $end
+$var reg 8 3 tx_data [7:0] $end
+$var reg 1 4 tx_write $end
+$scope module uart_inst $end
+$var wire 1 ( clk $end
+$var wire 1 ) rst_n $end
+$var wire 8 5 tx_data [7:0] $end
+$var wire 1 4 tx_write $end
+$var reg 8 6 rx_data [7:0] $end
+$var reg 1 0 rx_ready $end
+$var reg 1 / tx_busy $end
+$var reg 8 7 tx_reg [7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope task apb_read $end
+$var reg 32 8 addr [31:0] $end
+$upscope $end
+$scope task apb_write $end
+$var reg 32 9 addr [31:0] $end
+$var reg 32 : data [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx :
+bx 9
+bx 8
+b0 7
+b0 6
+b0 5
+04
+b0 3
+b0 2
+b0 1
+00
+0/
+b0 .
+b0 -
+b0 ,
+b0 +
+b0 *
+0)
+0(
+0'
+b0 &
+0%
+0$
+b0 #
+b0 "
+0!
+$end
+#10000
+1(
+#20000
+0(
+#30000
+1(
+#40000
+0(
+#50000
+1(
+#60000
+0(
+#70000
+1(
+#80000
+0(
+#90000
+1(
+#100000
+0(
+b10100101 :
+b0 9
+1)
+#110000
+1%
+1'
+b10100101 &
+b10100101 +
+b10100101 .
+1(
+#120000
+0(
+#130000
+1!
+1$
+1(
+#140000
+0(
+#150000
+0!
+b100 8
+0$
+0%
+1(
+#160000
+0(
+#170000
+1%
+0'
+b100 #
+b100 *
+b100 -
+1(
+#180000
+0(
+#190000
+1!
+1$
+1(
+#200000
+0(
+#210000
+1!
+1(
+#220000
+0(
+#230000
+0!
+b1000 8
+0$
+0%
+1(
+#240000
+0(
+#250000
+1%
+b1000 #
+b1000 *
+b1000 -
+1(
+#260000
+0(
+#270000
+1!
+1$
+1(
+#280000
+0(
+#290000
+1!
+1(
+#300000
+0(
+#310000
+0!
+b111100 :
+0$
+0%
+1(
+#320000
+0(
+#330000
+1%
+1'
+b111100 &
+b111100 +
+b111100 .
+b0 #
+b0 *
+b0 -
+1(
+#340000
+0(
+#350000
+1!
+1$
+1(
+#360000
+0(
+#370000
+0!
+b100 8
+0$
+0%
+1(
+#380000
+0(
+#390000
+1%
+0'
+b100 #
+b100 *
+b100 -
+1(
+#400000
+0(
+#410000
+1!
+1$
+1(
+#420000
+0(
+#430000
+1!
+1(
+#440000
+0(
+#450000
+0!
+b1000 8
+0$
+0%
+1(
+#460000
+0(
+#470000
+1%
+b1000 #
+b1000 *
+b1000 -
+1(
+#480000
+0(
+#490000
+1!
+1$
+1(
+#500000
+0(
+#510000
+1!
+1(
+#520000
+0(
+#530000
+0!
+0$
+0%
+1(
+#540000
+0(
+#550000
+1(
+#560000
+0(
+#570000
+1(
+#580000
+0(
+#590000
+1(
+#600000
+0(
+#610000
+1(
+#620000
+0(
+#630000
+1(
