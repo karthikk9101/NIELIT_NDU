@@ -1,0 +1,200 @@
+$date
+	Wed Nov  4 17:14:54 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module mini_soc_tb $end
+$var wire 2 ! soc_out [1:0] $end
+$var reg 1 " alu_sel $end
+$var reg 1 # clk $end
+$var reg 1 $ mux_sel $end
+$var reg 1 % rst $end
+$scope module dut $end
+$var wire 1 " alu_sel $end
+$var wire 1 # clk $end
+$var wire 1 $ mux_sel $end
+$var wire 1 % rst $end
+$var wire 2 & soc_out [1:0] $end
+$var wire 4 ' count [3:0] $end
+$var wire 2 ( alu_out [1:0] $end
+$scope module u_alu $end
+$var wire 2 ) a [1:0] $end
+$var wire 2 * b [1:0] $end
+$var wire 1 " sel $end
+$var reg 2 + result [1:0] $end
+$upscope $end
+$scope module u_counter $end
+$var wire 1 # clk $end
+$var wire 1 % rst $end
+$var reg 4 , count [3:0] $end
+$upscope $end
+$scope module u_mux $end
+$var wire 2 - in0 [1:0] $end
+$var wire 2 . in1 [1:0] $end
+$var wire 1 $ sel $end
+$var wire 2 / out [1:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx /
+bx .
+bx -
+bx ,
+bx +
+b1 *
+bx )
+bx (
+bx '
+bx &
+1%
+0$
+0#
+0"
+bx !
+$end
+#5
+b0 !
+b0 &
+b0 /
+b1 (
+b1 +
+b1 .
+b0 -
+b0 )
+b0 '
+b0 ,
+1#
+#10
+0#
+0%
+#15
+b1 '
+b1 ,
+1#
+#20
+0#
+#25
+b10 '
+b10 ,
+1#
+#30
+b11 (
+b11 +
+b11 .
+0#
+1"
+#35
+b11 '
+b11 ,
+1#
+#40
+0#
+#45
+b1 !
+b1 &
+b1 /
+b0 (
+b0 +
+b0 .
+b1 -
+b1 )
+b100 '
+b100 ,
+1#
+#50
+0#
+#55
+b101 '
+b101 ,
+1#
+#60
+b0 !
+b0 &
+b0 /
+0#
+1$
+#65
+b110 '
+b110 ,
+1#
+#70
+b10 !
+b10 &
+b10 /
+b10 (
+b10 +
+b10 .
+0#
+0"
+#75
+b111 '
+b111 ,
+1#
+#80
+0#
+#85
+b11 !
+b11 &
+b11 /
+b11 (
+b11 +
+b11 .
+b10 -
+b10 )
+b1000 '
+b1000 ,
+1#
+#90
+b10 !
+b10 &
+b10 /
+0#
+0$
+#95
+b1001 '
+b1001 ,
+1#
+#100
+0#
+#105
+b1010 '
+b1010 ,
+1#
+#110
+0#
+#115
+b1011 '
+b1011 ,
+1#
+#120
+0#
+#125
+b11 !
+b11 &
+b11 /
+b0 (
+b0 +
+b0 .
+b11 -
+b11 )
+b1100 '
+b1100 ,
+1#
+#130
+0#
+#135
+b1101 '
+b1101 ,
+1#
+#140
+0#
