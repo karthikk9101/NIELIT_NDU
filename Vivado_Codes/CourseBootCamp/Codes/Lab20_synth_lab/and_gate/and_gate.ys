@@ -1,0 +1,17 @@
+read_verilog and_gate.v
+hierarchy -check -top and_gate
+proc; opt; fsm; opt; memory; opt
+
+techmap; opt
+
+dfflibmap -liberty /home/<coe-
+no>/Desktop/Technology_PDKs/osu018/osu018_stdcells.lib
+
+abc -liberty /home/<coe-
+no>/Desktop/Technology_PDKs/osu018/osu018_stdcells.lib
+
+clean
+
+show
+
+write_verilog and_gate_netlist.v
