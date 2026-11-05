@@ -6,3 +6,4 @@
 >>>>>>> ad07def (complete lab 08)
 
 **/*.sh
+**/and_gate_netlist.v
