@@ -7,3 +7,5 @@
 
 **/*.sh
 **/and_gate_netlist.v
+
+**/*.ps1
