@@ -7,3 +7,4 @@
 
 **/*.sh
 **/and_gate_netlist.v
+**/upf.txt
