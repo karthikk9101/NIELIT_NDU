@@ -1,0 +1,171 @@
+$date
+	Thu Nov  5 16:48:39 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module low_power_tb $end
+$var wire 4 ! count_pwr_gate [3:0] $end
+$var wire 4 " count_clk_gate [3:0] $end
+$var wire 4 # count_base [3:0] $end
+$var reg 1 $ clk $end
+$var reg 1 % enable $end
+$var reg 1 & power_on $end
+$var reg 1 ' reset $end
+$scope module u1 $end
+$var wire 1 $ clk $end
+$var wire 1 ' reset $end
+$var reg 4 ( count [3:0] $end
+$upscope $end
+$scope module u2 $end
+$var wire 1 $ clk $end
+$var wire 1 % enable $end
+$var wire 1 ' reset $end
+$var reg 4 ) count [3:0] $end
+$upscope $end
+$scope module u3 $end
+$var wire 1 $ clk $end
+$var wire 1 & power_on $end
+$var wire 1 ' reset $end
+$var reg 4 * count [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 *
+b0 )
+b0 (
+1'
+0&
+0%
+0$
+b0 #
+b0 "
+b0 !
+$end
+#5
+1$
+#10
+0$
+#15
+1$
+#20
+0$
+0'
+#25
+b1 #
+b1 (
+1$
+#30
+0$
+1&
+1%
+#35
+b10 #
+b10 (
+b1 "
+b1 )
+b1 !
+b1 *
+1$
+#40
+0$
+#45
+b10 !
+b10 *
+b10 "
+b10 )
+b11 #
+b11 (
+1$
+#50
+0$
+#55
+b100 #
+b100 (
+b11 "
+b11 )
+b11 !
+b11 *
+1$
+#60
+0$
+0%
+#65
+b100 !
+b100 *
+b101 #
+b101 (
+1$
+#70
+0$
+#75
+b110 #
+b110 (
+b101 !
+b101 *
+1$
+#80
+0$
+0&
+#85
+b111 #
+b111 (
+1$
+#90
+0$
+#95
+b1000 #
+b1000 (
+1$
+#100
+0$
+1&
+1%
+#105
+b110 !
+b110 *
+b100 "
+b100 )
+b1001 #
+b1001 (
+1$
+#110
+0$
+#115
+b1010 #
+b1010 (
+b101 "
+b101 )
+b111 !
+b111 *
+1$
+#120
+0$
+#125
+b1000 !
+b1000 *
+b110 "
+b110 )
+b1011 #
+b1011 (
+1$
+#130
+0$
+#135
+b1100 #
+b1100 (
+b111 "
+b111 )
+b1001 !
+b1001 *
+1$
+#140
+0$

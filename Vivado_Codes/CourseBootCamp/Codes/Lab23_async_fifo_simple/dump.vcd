@@ -1,0 +1,214 @@
+$date
+	Thu Nov  5 16:16:50 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module fifo_tb $end
+$var wire 1 ! wr_full $end
+$var wire 1 " rd_empty $end
+$var wire 8 # rd_data [7:0] $end
+$var reg 1 $ rd_clk $end
+$var reg 1 % rd_en $end
+$var reg 1 & rd_rst $end
+$var reg 1 ' wr_clk $end
+$var reg 8 ( wr_data [7:0] $end
+$var reg 1 ) wr_en $end
+$var reg 1 * wr_rst $end
+$scope module uut $end
+$var wire 1 $ rd_clk $end
+$var wire 1 % rd_en $end
+$var wire 1 & rd_rst $end
+$var wire 1 ' wr_clk $end
+$var wire 8 + wr_data [7:0] $end
+$var wire 1 ) wr_en $end
+$var wire 1 * wr_rst $end
+$var reg 8 , rd_data [7:0] $end
+$var reg 1 " rd_empty $end
+$var reg 3 - rd_ptr [2:0] $end
+$var reg 1 ! wr_full $end
+$var reg 3 . wr_ptr [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 .
+b0 -
+bx ,
+b0 +
+1*
+0)
+b0 (
+0'
+1&
+0%
+0$
+bx #
+1"
+0!
+$end
+#5
+1'
+#7
+1$
+#10
+0'
+#14
+0$
+#15
+1'
+#20
+0'
+0*
+#21
+1$
+#25
+1'
+#28
+0$
+#30
+0'
+#35
+1'
+1$
+#40
+0'
+0&
+#42
+0$
+#45
+b1 (
+b1 +
+1)
+1'
+#49
+1$
+#50
+0'
+#55
+0"
+b1 .
+b10 (
+b10 +
+1'
+#56
+0$
+#60
+0'
+#63
+1$
+#65
+b10 .
+b11 (
+b11 +
+1'
+#70
+0'
+0$
+#75
+b11 .
+0)
+b100 (
+b100 +
+1'
+#77
+1$
+#80
+0'
+#84
+0$
+#85
+1'
+#90
+0'
+#91
+1$
+#95
+1'
+#98
+0$
+#100
+0'
+#105
+1%
+1'
+1$
+#110
+0'
+#112
+0$
+#115
+1'
+#119
+b1 -
+b1 #
+b1 ,
+1$
+#120
+0'
+#125
+1'
+#126
+0$
+#130
+0'
+#133
+b10 -
+b10 #
+b10 ,
+1$
+#135
+1'
+#140
+0'
+0$
+#145
+1'
+#147
+1"
+b11 -
+b11 #
+b11 ,
+0%
+1$
+#150
+0'
+#154
+0$
+#155
+1'
+#160
+0'
+#161
+1$
+#165
+1'
+#168
+0$
+#170
+0'
+#175
+1'
+1$
+#180
+0'
+#182
+0$
+#185
+1'
+#189
+1$
+#190
+0'
+#195
+1'
+#196
+0$
+#197

@@ -1,0 +1,216 @@
+$date
+	Thu Nov  5 16:36:22 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module multi_clk_tb $end
+$var wire 1 ! muxed_clk $end
+$var wire 1 " clk_div $end
+$var reg 1 # clk_fast $end
+$var reg 1 $ clk_slow $end
+$var reg 1 % rst $end
+$var reg 1 & sel $end
+$scope module u_div $end
+$var wire 1 # clk_in $end
+$var wire 1 % rst $end
+$var reg 1 " clk_out $end
+$var reg 2 ' counter [1:0] $end
+$upscope $end
+$scope module u_mux $end
+$var wire 1 # clk0 $end
+$var wire 1 $ clk1 $end
+$var wire 1 & sel $end
+$var wire 1 ! clk_out $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 '
+0&
+1%
+0$
+0#
+0"
+0!
+$end
+#5
+1!
+1#
+#10
+0!
+0#
+1$
+#15
+b1 '
+1!
+1#
+0%
+#20
+0!
+0#
+0$
+#25
+b10 '
+1!
+1#
+#30
+0!
+0#
+1$
+#35
+b11 '
+1!
+1#
+#40
+0!
+0#
+0$
+#45
+1"
+b0 '
+1!
+1#
+#50
+0!
+0#
+1$
+#55
+b1 '
+1!
+1#
+#60
+0!
+0#
+0$
+#65
+b10 '
+1#
+1&
+#70
+1!
+0#
+1$
+#75
+b11 '
+1#
+#80
+0!
+0#
+0$
+#85
+0"
+b0 '
+1#
+#90
+1!
+0#
+1$
+#95
+b1 '
+1#
+#100
+0!
+0#
+0$
+#105
+b10 '
+1#
+#110
+1!
+0#
+1$
+#115
+b11 '
+1#
+0&
+#120
+0!
+0#
+0$
+#125
+1"
+b0 '
+1!
+1#
+#130
+0!
+0#
+1$
+#135
+b1 '
+1!
+1#
+#140
+0!
+0#
+0$
+#145
+b10 '
+1!
+1#
+#150
+0!
+0#
+1$
+#155
+b11 '
+1!
+1#
+#160
+0!
+0#
+0$
+#165
+0"
+b0 '
+1!
+1#
+#170
+0!
+0#
+1$
+#175
+b1 '
+1!
+1#
+#180
+0!
+0#
+0$
+#185
+b10 '
+1!
+1#
+#190
+0!
+0#
+1$
+#195
+b11 '
+1!
+1#
+#200
+0!
+0#
+0$
+#205
+1"
+b0 '
+1!
+1#
+#210
+0!
+0#
+1$
+#215
+b1 '
+1!
+1#

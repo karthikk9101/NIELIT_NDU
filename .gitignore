@@ -7,4 +7,9 @@
 
 **/*.sh
 **/and_gate_netlist.v
+<<<<<<< HEAD
 **/upf.txt
+=======
+
+**/*.ps1
+>>>>>>> 3c3e4e8e362339b02a1eb30f833843a30f9d5c8f
