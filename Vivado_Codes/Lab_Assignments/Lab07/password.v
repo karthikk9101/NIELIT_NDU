@@ -1,12 +1,14 @@
+`timescale 1ns/1ps
 
-module password_lock (
+
+module password (
     input clk,
     input rst,
-    input din,
+    input x,
     output reg unlock
 );
 
-    // State encoding
+    // State declaration
     parameter S0 = 2'b00,
               S1 = 2'b01,
               S2 = 2'b10,
@@ -14,7 +16,7 @@ module password_lock (
 
     reg [1:0] state, next_state;
 
-    // State register
+    // Sequential block
     always @(posedge clk or posedge rst) begin
         if (rst)
             state <= S0;
@@ -22,37 +24,37 @@ module password_lock (
             state <= next_state;
     end
 
-    // Next state and Mealy output logic
+    // Combinational next-state and output logic
     always @(*) begin
 
-        next_state = S0;
+        next_state = state;
         unlock = 1'b0;
 
         case (state)
 
             S0: begin
-                if (din)
+                if (x == 1'b1)
                     next_state = S1;
                 else
                     next_state = S0;
             end
 
             S1: begin
-                if (din)
-                    next_state = S1;
-                else
+                if (x == 1'b0)
                     next_state = S2;
+                else
+                    next_state = S1;
             end
 
             S2: begin
-                if (din)
+                if (x == 1'b1)
                     next_state = S3;
                 else
                     next_state = S0;
             end
 
             S3: begin
-                if (din) begin
+                if (x == 1'b1) begin
                     next_state = S1;
                     unlock = 1'b1;
                 end
