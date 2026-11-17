@@ -1,81 +1,60 @@
-
 `timescale 1ns/1ps
 
 module seq_1110tb;
 
-    reg clk;
-    reg rst;
-    reg x;
+    reg clk, rst, x;
     wire y;
 
-    // DUT instantiation
-    seq_1110 DUT (
-        .clk(clk),
-        .rst(rst),
-        .x(x),
-        .y(y)
-    );
+    // Connect the design
+    seq_1110 DUT (.clk(clk), .rst(rst), .x(x), .y(y));
 
-    // Clock generation
+    // Clock: 10 ns period
+    initial clk = 0;
     always #5 clk = ~clk;
 
-    // Task to apply serial input
-    task send_bit;
-        input bit_in;
+    // Send one bit and check the output
+    task send_bit(input bit_in, input expected_y);
         begin
-            @(negedge clk);
+            @(negedge clk);     // change input at the falling edge
             x = bit_in;
-
-            #1;
-            $display("Time=%0t | Input=%b | State=%b | Next State=%b | Output=%b",
-                     $time, x, DUT.state, DUT.next_state, y);
-
-            @(posedge clk);
-            #1;
+            //#2;                 // wait a little so the Mealy output settles
+            if (y == expected_y)
+                $display("PASS: x=%b  y=%b", x, y);
+            else
+                $display("FAIL: x=%b  y=%b  (expected %b)", x, y, expected_y);
         end
     endtask
 
     initial begin
-
         $dumpfile("seq_1110.vcd");
-        $dumpvars();
-
-        clk = 0;
-        rst = 1;
-        x = 0;
+        $dumpvars(0, seq_1110tb);
 
         // Reset
+        rst = 1; x = 0;
         #12;
         rst = 0;
 
-        $display("\n--- Correct Sequence: 1110 ---");
+        $display("--- Sequence 1110 (should detect) ---");
+        send_bit(1, 0);
+        send_bit(1, 0);
+        send_bit(1, 0);
+        send_bit(0, 1);   // y goes high here
 
-        send_bit(1);
-        send_bit(1);
-        send_bit(1);
-        send_bit(0);
+        $display("--- Sequence 1101 (should NOT detect) ---");
+        send_bit(1, 0);
+        send_bit(1, 0);
+        send_bit(0, 0);
+        send_bit(1, 0);
 
-        #10;
-
-        $display("\n--- Incorrect Sequence: 1101 ---");
-
-        send_bit(1);
-        send_bit(1);
-        send_bit(0);
-        send_bit(1);
-
-        #10;
-
-        $display("\n--- Another Correct Sequence: 1110 ---");
-
-        send_bit(1);
-        send_bit(1);
-        send_bit(1);
-        send_bit(0);
+        $display("--- Sequence 11110 (should detect) ---");
+        send_bit(1, 0);
+        send_bit(1, 0);
+        send_bit(1, 0);
+        send_bit(1, 0);
+        send_bit(0, 1);   // y goes high here
 
         #10;
         $finish;
-
     end
 
 endmodule
