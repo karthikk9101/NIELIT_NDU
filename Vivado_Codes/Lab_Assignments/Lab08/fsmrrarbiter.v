@@ -1,3 +1,5 @@
+/*  Using FSM   */
+
 `timescale 1ns/1ps
 
 module rrarbiter (

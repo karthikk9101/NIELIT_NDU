@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module rrarbiter_tb;
+module tb_round_robin_arbiter;
 
     reg clk;
     reg rst;
@@ -8,7 +8,7 @@ module rrarbiter_tb;
     wire [2:0] grant;
 
     // DUT instantiation
-    rrarbiter uut (
+    round_robin_arbiter DUT (
         .clk(clk),
         .rst(rst),
         .req(req),
@@ -32,35 +32,36 @@ module rrarbiter_tb;
         rst = 0;
 
         // Test 1: Individual requests
-        #10 req = 3'b001;
-        #10 req = 3'b010;
-        #10 req = 3'b100;
+        @(negedge clk) req = 3'b001;
+        @(negedge clk) req = 3'b010;
+        @(negedge clk) req = 3'b100;
 
         // Test 2: Multiple simultaneous requests
-        #10 req = 3'b011;
-        #10 req = 3'b110;
-        #10 req = 3'b101;
+        @(negedge clk) req = 3'b011;
+        @(negedge clk) req = 3'b110;
+        @(negedge clk) req = 3'b101;
 
         // Test 3: All requesters continuously requesting
-        #10 req = 3'b111;
-        #60;
+        @(negedge clk) req = 3'b111;
+        repeat(9) @(negedge clk);
 
         // Test 4: No requests
         req = 3'b000;
-        #20;
+        repeat(3) @(negedge clk);
 
-        // Test 5: Request again
+        // Test 5: All requesters requesting again
         req = 3'b111;
-        #40;
+        repeat(6) @(negedge clk);
 
+        #10;
         $finish;
     end
 
-    // Monitor signals
+    // Monitor
     initial
     begin
-        $monitor("Time=%0t | Reset=%b | Req=%b | Grant=%b | State=%b",
-                  $time, rst, req, grant, uut.state);
+        $monitor("Time=%0t | Reset=%b | Req=%b | Grant=%b",
+                  $time, rst, req, grant);
     end
 
 endmodule
