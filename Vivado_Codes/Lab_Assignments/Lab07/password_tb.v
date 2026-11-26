@@ -1,14 +1,12 @@
+
 `timescale 1ns/1ps
 
 module password_tb;
 
-    reg clk;
-    reg rst;
-    reg x;
+    reg clk, rst, x;
     wire unlock;
 
-    // DUT instantiation
-    password DUT (
+    password uut (
         .clk(clk),
         .rst(rst),
         .x(x),
@@ -18,60 +16,32 @@ module password_tb;
     // Clock generation
     always #5 clk = ~clk;
 
-    // Task to enter one password bit
-    task enter_bit;
-        input bit_in;
-        begin
-            @(negedge clk);
-            x = bit_in;
-            @(posedge clk);
-            #1;
-            $display("Time=%0t | Input=%b | Unlock=%b",
-                      $time, x, unlock);
-        end
-    endtask
-
     initial begin
 
         $dumpfile("password.vcd");
-        $dumpvars();
+        $dumpvars(0, password_tb);
 
         clk = 0;
         rst = 1;
         x = 0;
 
-        // Apply reset
-        #12;
-        rst = 0;
+        #10 rst = 0;
 
-        $display("\n--- Correct Password: 1011 ---");
+        // Enter password 1011
+        #10 x = 1;
+        #10 x = 0;
+        #10 x = 1;
+        #10 x = 1;
 
-        enter_bit(1);
-        enter_bit(0);
-        enter_bit(1);
-        enter_bit(1);
+        #10 x = 0;
 
-        #10;
+        #20 $finish;
 
-        $display("\n--- Incorrect Password: 1001 ---");
+    end
 
-        enter_bit(1);
-        enter_bit(0);
-        enter_bit(0);
-        enter_bit(1);
-
-        #10;
-
-        $display("\n--- Another Correct Password: 1011 ---");
-
-        enter_bit(1);
-        enter_bit(0);
-        enter_bit(1);
-        enter_bit(1);
-
-        #10;
-        $finish;
-
+    initial begin
+        $monitor("Time=%0t | x=%b | unlock=%b",
+                  $time, x, unlock);
     end
 
 endmodule
